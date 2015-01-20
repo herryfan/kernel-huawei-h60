@@ -1,0 +1,18 @@
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_ULCA_GENERAL_V3_noNFC_config.dts"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_ULCA_GENERAL_V3_noNFC_config.dts"
+# 10 "arch/arm/boot/dts/auto-generate/MOGOLIA_ULCA_GENERAL_V3_noNFC_config.dts"
+/dts-v1/;
+
+
+/include/ "MOGOLIA_ULG_V3_noNFC_config.dtsi"
+/include/ "hisi_3630_pin_MOGOLIA_ULCA_GENERAL_V3_noNFC.dtsi"
+/include/ "hisi_3630_modem_MOGOLIA_ULCA_GENERAL_V3_noNFC.dtsi"
+/ {
+ board_info: board_info {
+  hisi,boardid = <2 2 7>;
+  hisi,boardname = "Mogolia_ULCA_GENERAL_V3_noNFC";
+  hisi,modem_id = <0x3fb0e000>;
+  hw,public;
+ };
+};

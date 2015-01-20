@@ -1,0 +1,21 @@
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_TL_V3_config.dts"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_TL_V3_config.dts"
+# 10 "arch/arm/boot/dts/auto-generate/MOGOLIA_TL_V3_config.dts"
+/dts-v1/;
+
+
+/include/ "MOGOLIA_TL_V1_config.dtsi"
+/include/ "hisi_3630_pin_MOGOLIA_TL_V3.dtsi"
+/include/ "hisi_3630_modem_MOGOLIA_TL_V3.dtsi"
+/ {
+ board_info: board_info {
+  hisi,boardid = <9 0 7>;
+  hisi,boardname = "Mogolia_TL_V3";
+  hw,public;
+ };
+
+ panel_lcd_jdi {
+  lcd-bl-type = <1>;
+ };
+};

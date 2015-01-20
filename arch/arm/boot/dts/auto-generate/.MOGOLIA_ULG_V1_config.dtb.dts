@@ -1,0 +1,28 @@
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_ULG_V1_config.dts"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_ULG_V1_config.dts"
+# 10 "arch/arm/boot/dts/auto-generate/MOGOLIA_ULG_V1_config.dts"
+/dts-v1/;
+
+
+/include/ "MOGOLIA_TL_V1_config.dtsi"
+/include/ "hisi_3630_pin_MOGOLIA_ULG_V1.dtsi"
+/include/ "hisi_3630_modem_MOGOLIA_ULG_V1.dtsi"
+/ {
+ board_info: board_info {
+  hisi,boardid = <2 0 7>;
+  hisi,boardname = "Mogolia_UL+G_V1";
+  hisi,modem_id = <0x3fb51000>;
+  hw,public;
+ };
+ audio_hal_config {
+  aud_para = "MOGOLIA_ULG";
+ };
+
+ bcm_wifi {
+  wifi_nvram_name = "nvram4334_hw_mogolia_ulg.txt";
+  wifi_fw_name = "fw_bcm4334_hw.bin";
+  status = "ok";
+ };
+
+};

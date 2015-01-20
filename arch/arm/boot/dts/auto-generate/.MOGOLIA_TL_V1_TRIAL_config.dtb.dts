@@ -1,0 +1,17 @@
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_TL_V1_TRIAL_config.dts"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/auto-generate/MOGOLIA_TL_V1_TRIAL_config.dts"
+# 10 "arch/arm/boot/dts/auto-generate/MOGOLIA_TL_V1_TRIAL_config.dts"
+/dts-v1/;
+
+
+/include/ "MOGOLIA_TL_V1_config.dtsi"
+/include/ "hisi_3630_pin_MOGOLIA_TL_V1_TRIAL.dtsi"
+/include/ "hisi_3630_modem_MOGOLIA_TL_V1_TRIAL.dtsi"
+/ {
+ board_info: board_info {
+  hisi,boardid = <7 0 0>;
+  hisi,boardname = "Mogolia_TL_V1_TRIAL";
+  hw,public;
+ };
+};
