@@ -99,7 +99,8 @@ static ssize_t store_config(struct device *dev,
     memcpy(&RnicConfig, buf, RNIC_CONFIG_LENTH);
 
     hwlog_info("RNIC__ %s enable value %s \n", __func__, buf);
-    RNIC_ConfigRmnetStatus(&RnicConfig);
+    // FIXME: Undefined reference
+    //RNIC_ConfigRmnetStatus(&RnicConfig);
     return count;
 }
 
