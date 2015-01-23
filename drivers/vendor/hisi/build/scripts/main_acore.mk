@@ -146,9 +146,9 @@ endif
 
 # lte
 lps : comm
-	$(TTIME) $(MAKE)  -C $(BALONG_TOPDIR)/modem/ps/build/tl/APP_CORE 
+	$(MAKE) -C $(BALONG_TOPDIR)/modem/ps/build/tl/APP_CORE 
 lmsp : comm
-	$(TTIME) $(MAKE)  -C $(BALONG_TOPDIR)/modem/oam/build/lt/APP_CORE $(maction)
+	$(MAKE) -C $(BALONG_TOPDIR)/modem/oam/build/lt/APP_CORE $(maction)
 
 ifeq ($(OBB_SEPARATE),true)
 oam_ps :
@@ -163,9 +163,9 @@ drv : comm oam_ps
 
 # gu
 gups : comm
-	$(TTIME) $(MAKE)   -C $(BALONG_TOPDIR)/modem/ps/build/gu/APP_CORE 
+	$(MAKE) -C $(BALONG_TOPDIR)/modem/ps/build/gu/APP_CORE 
 gumsp : comm
-	$(TTIME) $(MAKE)   -C $(BALONG_TOPDIR)/modem/oam/build/gu/APP_CORE 
+	$(MAKE) -C $(BALONG_TOPDIR)/modem/oam/build/gu/APP_CORE 
 
 $(warning The moudles are $(MOUDULES).)
 
@@ -179,7 +179,7 @@ balong : android
 # android independent image
 %image %.img : comm
 	@echo do [$@]
-	$(TTIME) $(MAKE)  -C $(BALONG_TOPDIR)/modem/drv/build/acore $@
+	$(MAKE)  -C $(BALONG_TOPDIR)/modem/drv/build/acore $@
 
 %.mk %akefile :
 	@echo nothing to be done for [$@]
@@ -187,7 +187,7 @@ balong : android
 # 
 %:: comm
 	$(warning do[$@])
-	$(TTIME) $(MAKE)  -C $(BALONG_TOPDIR)/modem/drv/build/acore $@
+	$(MAKE)  -C $(BALONG_TOPDIR)/modem/drv/build/acore $@
 # clean is so.....................................................
 CLEAN_MOUDULES :=
 # group 1, null
@@ -225,16 +225,16 @@ ifeq ($(strip $(CFG_OS_ANDROID_USE_K3V3_KERNEL)),YES)
 #	@-mkdir -p $(LINUX_KERNEL)/drivers/modem
 #	@echo > $(LINUX_KERNEL)/drivers/modem/Kconfig
 endif
-	$(MAKE) $(OBB_JOBS)  -C $(BALONG_TOPDIR)/modem/drv/build/acore clean
+	$(MAKE) $(OBB_JOBS) -C $(BALONG_TOPDIR)/modem/drv/build/acore clean
 
 clean-lmsp: clean-app
-	$(MAKE) $(OBB_JOBS)  -C $(BALONG_TOPDIR)/modem/oam/build/lt/APP_CORE clean
+	$(MAKE) $(OBB_JOBS) -C $(BALONG_TOPDIR)/modem/oam/build/lt/APP_CORE clean
 clean-lps: clean-app
-	$(MAKE)  $(OBB_JOBS)  -C $(BALONG_TOPDIR)/modem/ps/build/tl/APP_CORE clean
+	$(MAKE) $(OBB_JOBS) -C $(BALONG_TOPDIR)/modem/ps/build/tl/APP_CORE clean
 clean-gups: clean-app
-	$(MAKE)  $(OBB_JOBS)  -C $(BALONG_TOPDIR)/modem/ps/build/gu/APP_CORE clean
+	$(MAKE) $(OBB_JOBS) -C $(BALONG_TOPDIR)/modem/ps/build/gu/APP_CORE clean
 clean-gumsp: clean-app
-	$(MAKE)  $(OBB_JOBS)  -C $(BALONG_TOPDIR)/modem/oam/build/gu/APP_CORE clean
+	$(MAKE) $(OBB_JOBS) -C $(BALONG_TOPDIR)/modem/oam/build/gu/APP_CORE clean
 	
 clean-comm:
 	@echo complete $@
@@ -260,9 +260,9 @@ showcommands:
 # Used to force goals to build.  Only use for conditionally defined goals.
 .PHONY: FORCE
 pc-lint-msp:
-	$(TTIME) $(MAKE)  -C $(BALONG_TOPDIR)/modem/oam/build/lt/APP_CORE $(maction)
+	$(MAKE) -C $(BALONG_TOPDIR)/modem/oam/build/lt/APP_CORE $(maction)
 pc-lint-drv:
-	$(TTIME) $(MAKE)  -C $(BALONG_TOPDIR)/modem/drv/build/acore $(maction)
+	$(MAKE) -C $(BALONG_TOPDIR)/modem/drv/build/acore $(maction)
 
 .PHONY: $(maction)
 $(maction): pc-lint-msp pc-lint-drv
